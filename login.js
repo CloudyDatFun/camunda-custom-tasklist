@@ -24,7 +24,7 @@ function handleLogin() {
         if (responseJson.authenticated == false) {
             alert("Invalid username/password. Try again.")
         }
-        document.cookie = "username=" + responseJson.authenticatedUser
+        document.cookie = "username=" + responseJson.authenticatedUser;
         window.location.href = "index.html";
     })
     return false;

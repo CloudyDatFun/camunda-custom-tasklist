@@ -1,8 +1,8 @@
-//first add an event listener for page load
 document.addEventListener("DOMContentLoaded", check_for_auth, false);
+const userid = getCookie("username");
 
 function check_for_auth() {
-    if (getCookie("username") == "") {
+    if (userid == "") {
         return;
     }
 
@@ -44,18 +44,21 @@ function append_json(data) {
 }
 
 function claim_task(id) {
-    fetch('/rest/message', {
+    fetch('/rest/task/' + id + '/claim', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
         headers: {
             'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify({ userId: userid })
     }).then((response) => {
-        return response.json();
-    }).then((responseJson) => {
-        console.log("ProcessInstance object:", responseJson);
-        const processInstanceId = responseJson[0].processInstance.id;
-        console.log("ProcessInstanceId: ", processInstanceId);
+        return response.status;
+    }).then((responseStatus) => {
+        if (responseStatus != 204) {
+            return;
+        }
+
+        window.location.href = "edit-form.html?id=" + id;
     })
 }
 
