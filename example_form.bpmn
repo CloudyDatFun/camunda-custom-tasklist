@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1bjy1i2" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.7.3">
+  <bpmn:process id="Process_1vv6y9e" isExecutable="true">
+    <bpmn:endEvent id="Event_0rscsil">
+      <bpmn:incoming>Flow_140ad6h</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:startEvent id="Event_12m90qj">
+      <bpmn:outgoing>Flow_0e1x2e3</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0rdu8z0" messageRef="Message_00wogcy" />
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0e1x2e3" sourceRef="Event_12m90qj" targetRef="Activity_1firl23" />
+    <bpmn:sequenceFlow id="Flow_140ad6h" sourceRef="Activity_1firl23" targetRef="Event_0rscsil" />
+    <bpmn:userTask id="Activity_1firl23" name="Edit Form">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="FormField_330nj3v" label="Test String" type="string" />
+          <camunda:formField id="FormField_38vvr1f" label="Test Long" type="long" />
+          <camunda:formField id="FormField_1b0k9hr" label="Test Bool" type="boolean" />
+          <camunda:formField id="FormField_1939acg" label="Test Date" type="date" />
+          <camunda:formField id="FormField_0gklfa4" label="Test Enum" type="enum">
+            <camunda:value id="Value_2jeuod1" name="1" />
+            <camunda:value id="Value_2i1i6a5" name="2" />
+            <camunda:value id="Value_36qpcch" name="3" />
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0e1x2e3</bpmn:incoming>
+      <bpmn:outgoing>Flow_140ad6h</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmn:message id="Message_00wogcy" name="Message_1h7m97e" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1vv6y9e">
+      <bpmndi:BPMNEdge id="Flow_0e1x2e3_di" bpmnElement="Flow_0e1x2e3">
+        <di:waypoint x="188" y="160" />
+        <di:waypoint x="290" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_140ad6h_di" bpmnElement="Flow_140ad6h">
+        <di:waypoint x="390" y="160" />
+        <di:waypoint x="492" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0rscsil_di" bpmnElement="Event_0rscsil">
+        <dc:Bounds x="492" y="142" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0y2o3kn_di" bpmnElement="Event_12m90qj">
+        <dc:Bounds x="152" y="142" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_06qmb8r_di" bpmnElement="Activity_1firl23">
+        <dc:Bounds x="290" y="120" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
