@@ -4,6 +4,7 @@ function handleLogin() {
 
     if (user.length < 1 || pw.length < 1) {
         alert("Username or password cannot be empty.")
+        return false;
     }
 
     fetch('/rest/identity/verify', {
@@ -23,6 +24,7 @@ function handleLogin() {
         console.log(responseJson);
         if (responseJson.authenticated == false) {
             alert("Invalid username/password. Try again.")
+            return false;
         }
         document.cookie = "username=" + responseJson.authenticatedUser;
         window.location.href = "index.html";
