@@ -4,8 +4,11 @@ const params = new URLSearchParams(window.location.search).get("id");
 var unchanged_data;
 
 function check_for_auth() {
-    if (userid == "" || params == null) {
-        return;
+    if (userid == "") {
+        window.location.replace("login.html");
+    }
+    if (params.length > 1) {
+        window.location.replace("index.html");
     }
 
     get_task()

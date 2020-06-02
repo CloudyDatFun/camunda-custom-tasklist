@@ -20,7 +20,6 @@ function handleLogin() {
         }
         return response.json();
     }).then((responseJson) => {
-        console.log(responseJson);
         if (responseJson.authenticated == false) {
             alert("Invalid username/password. Try again.")
         }
