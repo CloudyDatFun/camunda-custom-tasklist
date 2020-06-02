@@ -76,7 +76,7 @@ function handle_submit() {
             return false;
         }
 
-        window.location.href = "index.html";
+        window.location.replace("index.html");
     })
 }
 

@@ -25,7 +25,7 @@ function handleLogin() {
             alert("Invalid username/password. Try again.")
         }
         document.cookie = "username=" + responseJson.authenticatedUser;
-        window.location.href = "index.html";
+        window.location.replace("index.html");
     })
     return false;
 }

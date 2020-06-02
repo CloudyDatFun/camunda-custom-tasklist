@@ -3,7 +3,7 @@ const userid = getCookie("username");
 
 function check_for_auth() {
     if (userid == "") {
-        return;
+        window.location.replace("login.html");
     }
 
     get_json_data()
@@ -26,19 +26,21 @@ function get_json_data() {
 
 //this function appends the json data to the table 'gable'
 function append_json(data) {
-    var tableHTML = "<tr>";
-    for (var headers in data[0]) {
-        tableHTML += "<th>" + headers + "</th>";
-    }
-    tableHTML += "</tr>";
-    for (var eachItem in data) {
-        tableHTML += "<tr>";
-        var dataObj = data[eachItem];
-        for (var eachValue in dataObj) {
-            tableHTML += "<td>" + dataObj[eachValue] + "</td>";
+    if (data.length == 0) {
+        tableHTML = "<div>There are currently no open user tasks!</div>"
+    } else {
+        tableHTML = "<tr> <th>Name</th> <th>Created at</th> <th>Due to</th> <th>Description</th> </tr>";
+
+        for (var eachItem in data) {
+            tableHTML += "<tr>";
+            var dataObj = data[eachItem];
+            tableHTML += "<td>" + dataObj["name"] + "</td>";
+            tableHTML += "<td>" + dataObj["created"] + "</td>";
+            tableHTML += "<td>" + dataObj["due"] + "</td>";
+            tableHTML += "<td>" + dataObj["description"] + "</td>";
+            tableHTML += "<td> <input class='button-claim' type='button' value='Claim Task' onclick='claim_task(\"" + dataObj["id"].toString() + "\")'/> </td>";
+            tableHTML += "</tr>";
         }
-        tableHTML += "<td> <input class='button-claim' type='button' value='Claim Task' onclick='claim_task(\"" + dataObj["id"].toString() + "\")'/> </td>";
-        tableHTML += "</tr>";
     }
     document.getElementById('tasklist').innerHTML = tableHTML;
 }
@@ -57,8 +59,7 @@ function claim_task(id) {
         if (responseStatus != 204) {
             return;
         }
-
-        window.location.href = "edit-form.html?id=" + id;
+        window.location.replace("edit-form.html?id=" + id);
     })
 }
 
@@ -75,4 +76,9 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+
+function logout() {
+    document.cookie = "username=";
+    window.location.replace("login.html");
 }
