@@ -45,24 +45,6 @@ function append_json(data) {
     document.getElementById('history-tasklist').innerHTML = tableHTML;
 }
 
-function claim_task(id) {
-    fetch('/rest/task/' + id + '/claim', {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ userId: userid })
-    }).then((response) => {
-        return response.status;
-    }).then((responseStatus) => {
-        if (responseStatus != 204) {
-            return;
-        }
-        window.location.replace("edit-form.html?id=" + id);
-    })
-}
-
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
