@@ -11,6 +11,8 @@ function check_for_auth() {
 }
 
 function get_json_data() {
+    var candidateJson;
+
     fetch('/rest/task?candidateUser=' + userid, {
         method: 'GET',
         mode: 'cors',
@@ -20,7 +22,21 @@ function get_json_data() {
     }).then((response) => {
         return response.json();
     }).then((responseJson) => {
-        append_json(responseJson)
+        candidateJson = responseJson;
+
+        fetch('/rest/task?assignee=' + userid, {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((response) => {
+            return response.json();
+        }).then((responseJson) => {
+            candidateJson = responseJson.concat(candidateJson);
+
+            append_json(candidateJson);
+        })
     })
 }
 
