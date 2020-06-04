@@ -1,0 +1,75 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #0ba1e9;
+    background: -moz-linear-gradient(180deg, #0ba1e9 2%, #0c3ccb 50%, #450de0 100%);
+    background: -webkit-linear-gradient(180deg, #0ba1e9 2%, #0c3ccb 50%, #450de0 100%);
+    background: linear-gradient(180deg, #0ba1e9 2%, #0c3ccb 50%, #450de0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0ba1e9",endColorstr="#450de0",GradientType=1); 
+}
+
+.register_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 200px;
+    padding: 20px;
+    height: 400px;
+    width: 400px;
+    background-color: #FFF;
+    border-radius: 2px;
+    -webkit-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.75);
+}
+
+.headline {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.register_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register_form > input {
+    width: 300px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.register_form > .form_input_bottom {
+    margin-bottom: 35px;
+}
+
+.register_form > .form_submit {
+    border: none;
+    border-radius: 2px;
+    background: #0c3ccb;
+    color: #FFF;
+    width: 120px;
+    height: 45px;
+    font-size: 17px;
+    margin-bottom: 40px;
+}
+
+.register {
+    border: none;
+    border-radius: 2px;
+    background: #0c3ccb;
+    color: #FFF;
+    width: 120px;
+    height: 45px;
+    font-size: 17px;
+}
+
+.registerNav {
+    margin-bottom: 10px;
+    font-size: 15px;
+}

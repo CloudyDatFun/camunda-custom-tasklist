@@ -1,11 +1,16 @@
+<head>
+    <link rel="stylesheet" href="login.css">
+</head>
+
 <script src="login.js"></script>
 
-<form name="login" onSubmit="return handleLogin()">
-
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username">
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password">
-
-    <input type="submit" value="Login">
-</form>
+<div class="login_wrapper">
+    <a class="headline">Login</a>
+    <form name="login" onSubmit="return handleLogin()" class="login_form">
+        <input type="text" id="username" name="username" placeholder="Username" class="form_input">
+        <input type="password" id="password" name="password" placeholder="Password" class="form_input form_input_bottom">
+        <input type="submit" value="Submit" class="form_submit">
+    </form>
+    <a class="registerNav">Not signed up yet?</a>
+    <input type="button" value="Register" onclick="register()" class="register"/>
+</div>

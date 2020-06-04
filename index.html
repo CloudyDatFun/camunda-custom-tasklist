@@ -1,8 +1,15 @@
+<head>
+    <link rel="stylesheet" href="index.css">
+</head>
+
 <script src="index.js"></script>
 
-<div>
-    <table id="tasklist" />
+<div class="navbar">
+    <a class="nav_title">Tasklist</a>
+    <input type="button" value="History" onclick="history()" class="history" />
+    <input type="button" value="Logout" onclick="logout()" class="logout" />
 </div>
-<div>
-    <input type="button" value="Logout" onclick="logout()" />
+
+<div class="table_wrapper">
+    <table id="tasklist" />
 </div>

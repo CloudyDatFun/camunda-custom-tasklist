@@ -1,0 +1,75 @@
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background: #0ba1e9;
+    background: -moz-linear-gradient(180deg, #0ba1e9 2%, #0c3ccb 50%, #450de0 100%);
+    background: -webkit-linear-gradient(180deg, #0ba1e9 2%, #0c3ccb 50%, #450de0 100%);
+    background: linear-gradient(180deg, #0ba1e9 2%, #0c3ccb 50%, #450de0 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0ba1e9",endColorstr="#450de0",GradientType=1); 
+}
+
+.nav_title {
+    font-size: 24px;
+    color: #eee;
+    margin-right: 50px;
+}
+
+.logout {
+    height: 30px;
+    width: 90px;
+    font-size: 15px;
+    background-color: #eee;
+    border: none;
+    border-radius: 2px;
+}
+
+.history {
+    height: 30px;
+    width: 90px;
+    font-size: 15px;
+    background-color: #eee;
+    border: none;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+
+table {
+    margin-top: 50px;
+    border-collapse: collapse;
+    border: 1px solid #eee;
+}
+
+tr:hover {
+    background-color: #f4f4f4;
+}
+
+tr:hover > td {
+    color: #555;
+}
+
+th, td {
+    border: 1px solid #eee;
+    padding: 12px 35px;
+    border-collapse: collapse;
+}
+
+th {
+    background: #aaa;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.button-claim {
+    border: none;
+    border-radius: 2px;
+    background: #0c3ccb;
+    color: #FFF;
+    padding: 5px;
+}
