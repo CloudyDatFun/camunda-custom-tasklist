@@ -7,18 +7,13 @@
     padding: 5px;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     justify-content: flex-start;
     background: #0ba1e9;
     background: -moz-linear-gradient(180deg, #0ba1e9 2%, #0c3ccb 50%, #450de0 100%);
     background: -webkit-linear-gradient(180deg, #0ba1e9 2%, #0c3ccb 50%, #450de0 100%);
     background: linear-gradient(180deg, #0ba1e9 2%, #0c3ccb 50%, #450de0 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0ba1e9",endColorstr="#450de0",GradientType=1); 
-}
-
-.nav_title {
-    font-size: 24px;
-    color: #eee;
-    margin-right: 50px;
 }
 
 .logout {
@@ -30,7 +25,13 @@
     border-radius: 2px;
 }
 
-.history {
+.nav_title {
+    font-size: 24px;
+    color: #eee;
+    margin-right: 50px;
+}
+
+.tasklist {
     height: 30px;
     width: 90px;
     font-size: 15px;

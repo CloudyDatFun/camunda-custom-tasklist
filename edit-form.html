@@ -1,13 +1,24 @@
+<head>
+    <link rel="stylesheet" href="edit-form.css">
+</head>
+
 <script src="edit-form.js"></script>
+
+<div class="navbar">
+    <a class="nav_title">Edit Form</a>
+    <input type="button" value="Tasklist" onclick="tasklist()" class="tasklist" />
+    <input type="button" value="History" onclick="history()" class="history" />
+    <input type="button" value="Logout" onclick="logout()" class="logout"/>
+</div>
 
 <form name="edit-variables" onSubmit="return handle_submit()">
 
     <ul id="variables">
     </ul>
 
-    <input type="submit" value="Submit Form">
+    <input type="submit" value="Submit Form" class="submit">
 </form>
 
 <div>
-    <input type="button" value="Back to Tasklist" onclick="window.location.href = 'index.html'" />
+    <input type="button" value="Back to Tasklist" onclick="window.location.href = 'index.html'" class="back" />
 </div>

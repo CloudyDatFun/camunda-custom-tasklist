@@ -7,6 +7,7 @@
     padding: 5px;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     justify-content: flex-start;
     background: #0ba1e9;
     background: -moz-linear-gradient(180deg, #0ba1e9 2%, #0c3ccb 50%, #450de0 100%);
@@ -30,6 +31,16 @@
     border-radius: 2px;
 }
 
+.tasklist {
+    height: 30px;
+    width: 90px;
+    font-size: 15px;
+    background-color: #eee;
+    border: none;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+
 .history {
     height: 30px;
     width: 90px;
@@ -40,36 +51,22 @@
     margin-right: 5px;
 }
 
-table {
-    margin-top: 50px;
-    border-collapse: collapse;
-    border: 1px solid #eee;
-}
-
-tr:hover {
-    background-color: #f4f4f4;
-}
-
-tr:hover > td {
-    color: #555;
-}
-
-th, td {
-    border: 1px solid #eee;
-    padding: 12px 35px;
-    border-collapse: collapse;
-}
-
-th {
-    background: #aaa;
-    text-transform: uppercase;
-    font-size: 12px;
-}
-
-.button-claim {
+.submit {
     border: none;
     border-radius: 2px;
     background: #0c3ccb;
     color: #FFF;
-    padding: 5px;
+    padding: 10px;
+}
+
+.back {
+    border: none;
+    border-radius: 2px;
+    background: #666;
+    color: #FFF;
+    padding: 10px;
+}
+
+form {
+    margin-top: 50px;
 }

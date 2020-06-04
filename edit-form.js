@@ -101,3 +101,16 @@ function getCookie(cname) {
     }
     return "";
 }
+
+function logout() {
+    document.cookie = "username=";
+    window.location.replace("login.html");
+}
+
+function tasklist() {
+    window.location.replace("index.html");
+}
+
+function history() {
+    window.location.replace("history.html");
+}

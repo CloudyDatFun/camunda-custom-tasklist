@@ -97,3 +97,7 @@ function logout() {
     document.cookie = "username=";
     window.location.replace("login.html");
 }
+
+function history() {
+    window.location.replace("history.html");
+}
