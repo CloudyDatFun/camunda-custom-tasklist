@@ -10,7 +10,7 @@ html {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0ba1e9",endColorstr="#450de0",GradientType=1); 
 }
 
-.login_wrapper {
+.register_wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,23 +32,23 @@ html {
     margin-bottom: 50px;
 }
 
-.login_form {
+.register_form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.login_form > .form_input {
+.register_form > input {
     width: 300px;
     font-size: 15px;
     margin-bottom: 20px;
 }
 
-.login_form > .form_input_bottom {
+.register_form > .form_input_bottom {
     margin-bottom: 35px;
 }
 
-.login_form > .form_submit {
+.register_form > .form_submit {
     border: none;
     border-radius: 2px;
     background: #0c3ccb;

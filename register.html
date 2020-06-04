@@ -1,21 +1,27 @@
+<head>
+    <link rel="stylesheet" href="register.css">
+</head>
+
 <script src="register.js"></script>
 
-<form name="register" onSubmit="return handleRegister()">
+<div class="register_wrapper">
+    <form name="register" onSubmit="return handleRegister()" class="register_form">
 
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
 
-    <label for="firstname">First Name:</label>
-    <input type="text" id="firstname" name="firstname" required>
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required>
 
-    <label for="lastname">Last Name:</label>
-    <input type="text" id="lastname" name="lastname" required>
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required>
 
-    <label for="email">E-Mail:</label>
-    <input type="email" id="email" name="email" required>
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" required>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
 
-    <input type="submit" value="Register">
-</form>
+        <input type="submit" value="Register">
+    </form>
+</div>
