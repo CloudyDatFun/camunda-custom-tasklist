@@ -21,13 +21,12 @@ function handleLogin() {
         }
         return response.json();
     }).then((responseJson) => {
-        console.log(responseJson);
         if (responseJson.authenticated == false) {
             alert("Invalid username/password. Try again.")
             return false;
         }
         document.cookie = "username=" + responseJson.authenticatedUser;
-        window.location.href = "index.html";
+        window.location.replace("index.html");
     })
     return false;
 }

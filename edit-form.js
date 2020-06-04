@@ -1,11 +1,15 @@
 document.addEventListener("DOMContentLoaded", check_for_auth, false);
 const userid = getCookie("username");
-const params = new URLSearchParams(window.location.search).get("id");
+var params;
 var unchanged_data;
 
 function check_for_auth() {
-    if (userid == "" || params == null) {
-        return;
+    params = new URLSearchParams(window.location.search).get("id");
+    if (params == undefined) {
+        window.location.replace("index.html");
+    }
+    if (userid == "") {
+        window.location.replace("login.html");
     }
 
     get_task()
@@ -13,8 +17,8 @@ function check_for_auth() {
 
 function get_task() {
     fetch('/rest/task/' + params + '/form-variables', {
-        method: 'GET', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
+        method: 'GET',
+        mode: 'cors',
         headers: {
             'Content-Type': 'application/json'
         }
@@ -46,7 +50,7 @@ function generate_inputs(data) {
             case "Boolean":
                 listHTML += "checkbox'";
         }
-        listHTML += " id='" + eachItem + " name='" + eachItem + "'></div>"
+        listHTML += " id='" + eachItem + "' name='" + eachItem + "'></div>"
         listHTML += "</li>";
         listHTML += "</div>";
     }
@@ -57,26 +61,29 @@ function generate_inputs(data) {
 function handle_submit() {
     var changed_data = unchanged_data;
     for (var eachItem in unchanged_data) {
-        changed_data[eachItem].value = document.getElementById('variables').value;
+        if (document.getElementById(eachItem).value == "on") {
+            changed_data[eachItem].value = true;
+        } else if (document.getElementById(eachItem).value == "off") {
+            changed_data[eachItem].value = false;
+        } else {
+            changed_data[eachItem].value = document.getElementById(eachItem).value;
+        }
     }
 
     fetch('/rest/task/' + params + '/submit-form', {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
+        method: 'POST',
+        mode: 'cors',
         headers: {
             'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify({ variables: changed_data })
     }).then((response) => {
-        if (response.status == 204) {
-            alert("Check your inputs.")
-            return false;
+        return response.status;
+    }).then((responseStatus) => {
+        if (responseStatus != 204) {
+            return;
         }
-        if (!response.ok) {
-            alert("Something went wrong.")
-            return false;
-        }
-
-        window.location.href = "index.html";
+        window.location.replace("index.html");
     })
 }
 
